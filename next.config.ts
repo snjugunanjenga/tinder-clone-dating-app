@@ -1,15 +1,10 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   eslint: {
-    // ✅ Don't block Vercel builds on ESLint errors
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: true, // ✅ Don't block build on ESLint errors
   },
   typescript: {
-    // ✅ Don't block Vercel builds on type errors
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: true, // ✅ Don't block build on TS errors
   },
   images: {
     remotePatterns: [
@@ -25,6 +20,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
-
-
+module.exports = nextConfig;
