@@ -1,36 +1,179 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+---
 
-## Getting Started
+# FullStack Dating Website with Next.js, Supabase & Stream
 
-First, run the development server:
+<div align="center">
+  <br />
+  <a href="https://youtu.be/8QDT776XtO8" target="_blank">
+    <img width="1280" height="720" alt="Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of 10,000 REACT COMPONENTS (5)" src="https://github.com/user-attachments/assets/34f397f9-f989-4c33-a3fd-de13aa6f4305" />
+  </a>
+  <br />
+  <div>
+    <img src="https://img.shields.io/badge/-Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
+    <img src="https://img.shields.io/badge/-Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" />
+    <img src="https://img.shields.io/badge/-Stream-0057FF?style=for-the-badge&logo=getstream&logoColor=white" alt="Stream" />
+    <img src="https://img.shields.io/badge/-PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+    <img src="https://img.shields.io/badge/-TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+    <img src="https://img.shields.io/badge/-TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  </div>
+  <h3 align="center">Build a FullStack Dating Website with Next.js, Supabase, Stream & TailwindCSS</h3>
+  <div align="center">
+    Follow the full video tutorial on 
+    <a href="https://youtu.be/8QDT776XtO8" target="_blank"><b>YouTube</b></a>
+  </div>
+  <br />
+</div>
+
+## 📋 Table of Contents
+
+1. [Introduction](#-introduction)
+2. [Tech Stack](#-tech-stack)
+3. [Features](#-features)
+4. [Timestamps](#-timestamps)
+5. [Quick Start](#-quick-start)
+6. [Screenshots](#-screenshots)
+7. [Deployment](#-deployment)
+8. [Useful Links](#-useful-links)
+
+---
+
+## 🚀 Introduction
+
+In this in-depth tutorial you'll build a production-ready **FullStack Dating Website** using **Next.js**, **Supabase** (Postgres + Realtime), and **Stream** for chat & video. We cover everything from authentication and DB schema to matching logic, realtime chat, and one-to-one video calls — a complete, intermediate → advanced project.
+
+🎥 Watch the full tutorial: [YouTube](https://youtu.be/8QDT776XtO8)
+
+---
+
+## ⚙️ Tech Stack
+
+* **Next.js (App Router)** – Server & client components for fast SSR/SSG
+* **Supabase** – Postgres database, auth, RLS, storage & realtime
+* [**Stream** – Real-time chat & video/call SDK](https://getstream.io/chat/sdk/react/?utm_source=youtube&utm_medium=referral&utm_content=&utm_campaign=pedro2025)
+* **TailwindCSS** – Utility-first styling & responsive layouts
+* **TypeScript** – Type-safe codebase
+* **Vercel** – Recommended hosting & serverless deployment
+
+---
+
+## ⚡️ Features
+
+* 🔒 **Auth** — Secure sign-up, sign-in, and session handling
+* 🧾 **Postgres Schema** — Profiles, matches, messages, calls (RLS-ready)
+* 👤 **Profile Page** — View & edit user profile with photos & bio
+* 🧪 **Fake Profiles Seeder** — Seed the database for local testing
+* ❤️ **Matching System** — Discover, like & match users
+* 💬 **Realtime Chat** — One-to-one messaging via Stream
+* 🎥 **Live Video Calls** — WebRTC-backed calls using Stream SDK
+* 📱 **Responsive UI** — Mobile-first design with Tailwind
+* ✅ **Production-ready** — Env config, deployment guide, and seeding scripts
+
+---
+
+## 📺 Timestamps
+
+* **00:00:00** — Intro
+* **00:02:00** — Setup Supabase
+* **00:06:55** — Authentication
+* **00:36:00** — Creating Navbar
+* **00:41:00** — PostgreSQL Tables (schema & RLS)
+* **00:52:00** — Profile Page
+* **01:42:00** — Fake Profiles Script (seeding)
+* **01:47:00** — Matches Page
+* **02:34:00** — User Matched Page
+* **02:47:00** — Realtime Chat (Stream)
+* **04:08:00** — Live Video Call (Stream / WebRTC)
+
+---
+
+## 👌 Quick Start
+
+### Prerequisites
+
+* [Node.js (v18+)](https://nodejs.org/)
+* [Supabase account](https://app.supabase.com/)
+* [Stream account](https://getstream.io/chat/sdk/react/?utm_source=youtube&utm_medium=referral&utm_content=&utm_campaign=pedro2025)
+* [Vercel account](https://vercel.com/) for deployment
+
+### Clone and Run
+
+```bash
+# replace with your repo when created
+git clone https://github.com/yourusername/nextjs-dating-app.git
+cd nextjs-dating-app
+npm install
+```
+
+### Environment
+
+Copy the example env and fill your keys:
+
+```bash
+cp .env.example .env.local
+# then edit .env.local with:
+# NEXT_PUBLIC_SUPABASE_URL=
+# NEXT_PUBLIC_SUPABASE_ANON_KEY=
+# SUPABASE_SERVICE_ROLE_KEY=
+# STREAM_API_KEY=
+# STREAM_API_SECRET=
+# NEXT_PUBLIC_CLERK_FRONTEND_API=   (if using Clerk)
+```
+
+### Database Setup (Supabase)
+
+1. Create a new Supabase project and Postgres database.
+2. Run the provided SQL (schema) file or use the SQL editor to create tables (users, profiles, matches, messages, calls).
+3. Enable Realtime or replication features if you plan to use Supabase realtime.
+4. Optionally run the seeder script to create fake profiles for testing:
+
+```bash
+npm run seed:profiles
+```
+
+### Run Dev Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# opens at http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🖼️ Screenshots
+<img width="998" height="850" alt="Screenshot 2025-08-18 at 4 52 24 PM" src="https://github.com/user-attachments/assets/a9a05363-26b6-4b66-9de8-b476ed0d39a1" />
+<img width="958" height="840" alt="Screenshot 2025-08-18 at 4 56 45 PM" src="https://github.com/user-attachments/assets/36e4b4f8-deb5-46db-952d-ecf59b172647" />
+<img width="1811" height="924" alt="Screenshot 2025-08-14 at 7 20 03 PM" src="https://github.com/user-attachments/assets/490ec5c9-7553-4d89-ab39-9b6a892d77de" />
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ☁️ Deployment
 
-To learn more about Next.js, take a look at the following resources:
+### Deploy on Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push your completed code to GitHub.
+2. Go to [Vercel](https://vercel.com/).
+3. Import your repository.
+4. Add Environment Variables in Vercel (same as `.env.local`).
+5. Set up any server-side secrets (Stream secret, Supabase service key).
+6. Click **Deploy**.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Your live app will be hosted on a Vercel subdomain (e.g. `https://your-dating-app.vercel.app`).
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔗 Useful Links
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* [Next.js Documentation](https://nextjs.org/docs)
+* [Supabase Docs (Auth, Database, Realtime)](https://supabase.com/docs)
+* [Stream Chat & Video SDK](https://getstream.io/chat/sdk/react/)
+* [Tailwind CSS Docs](https://tailwindcss.com/docs)
+* [Vercel](https://vercel.com/)
+* Example / reference code used in video: [machadop1407/social-media-vite-supabase](https://github.com/machadop1407/social-media-vite-supabase)
+
+---
+
+If you’d like, I can:
+
+* add the SQL schema file (`supabase/schema.sql`) and a ready-to-run seeder script,
+* produce an `.env.example` with the exact keys used in the tutorial,
+* or generate a complete GitHub repo structure (folders, starter files) you can copy into a new repo. Which one would you like next?
